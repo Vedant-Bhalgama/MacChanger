@@ -27,9 +27,9 @@ def mac_changer():
 	try:
 		net_int = raw_input("[+] Please select the network interface (eg. eth0) >> ")
 		new_mac = raw_input("[+] Please enter new Mac Address >> ")
-		subprocess.call("[ifconfig " + net_int + "down"])
-		subprocess.call("[ifconfig " + net_int + "hw " + "ether " + new_mac])
-		subprocess.call("[ifconfig " + net_int + "up"])
+		subprocess.call(["ifconfig " + net_int + "down"])
+		subprocess.call(["ifconfig " + net_int + "hw " + "ether " + new_mac])
+		subprocess.call(["ifconfig " + net_int + "up"])
 		print("[+] New Mac Address has been changed successfully to " + new_mac)
 		print_output = raw_input("[+] Do you want to print the result of the new mac y/n >> ")
 		clear()
